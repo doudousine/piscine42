@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 14:00:53 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/11 15:21:26 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/12 14:40:46 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/12 18:15:45 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_factorial(int nb)
+int ft_sqrt(int nb)
 {
-	int fct;
-
-	fct=nb;
-	if(nb <= 0 || nb > 12 )
-		return (0);
-	if(nb == 1)
-		return(1);
-	return(nb * ft_recursive_factorial(nb - 1));
+	float x = nb;
+	float y = 1;
+	float e = 0.1;
+	while(x - y > e)
+	{
+		x = (x + y) / 2;
+		y = nb / x;
+	}
+	return x;
 }
