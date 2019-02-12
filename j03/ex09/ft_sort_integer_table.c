@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 14:06:26 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/12 12:09:57 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/11 19:21:26 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/12 11:56:27 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_swap(int *tab1, int *tab2)
+{
+	int recipient;
 
-void	ft_putchar(char c);
+	recipient = 0;
+	recipient = *tab1;
+	*tab1 = *tab2;
+	*tab2 = recipient;
+}
 
-void	ft_putstr(char *str)
+void	ft_sort_integer_table(int *tab, int size)
 {
 	int i;
+	int j;
 
 	i = 0;
-	while (str[i])
+	j = 0;
+	while (i < size)
 	{
-		ft_putchar(str[i]);
+		j = -1;
+		while (++j < size)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				ft_swap(&tab[j], &tab[j + 1]);
+				j = 0;
+			}
+		}
 		i++;
 	}
 }
