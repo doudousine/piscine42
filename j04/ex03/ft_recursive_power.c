@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 16:19:24 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/11 16:48:39 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/13 11:46:17 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int		ft_recursive_power(int nb, int power)
 		return (0);
 	if (power == 0)
 		return (1);
-	return (nb * ft_recursive_power(nb,power -1));
+	return (nb * ft_recursive_power(nb, power - 1));
 }

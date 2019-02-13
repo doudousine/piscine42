@@ -6,19 +6,23 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:40:46 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/12 18:15:45 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/13 14:10:56 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int		ft_sqrt(int nb)
 {
-	float x = nb;
-	float y = 1;
-	float e = 0.1;
-	while(x - y > e)
+	float x;
+	float y;
+	float e;
+
+	x = nb;
+	y = 1;
+	e = 0.1;
+	while (x - y > e)
 	{
 		x = (x + y) / 2;
 		y = nb / x;
 	}
-	return x;
+	return (x);
 }
