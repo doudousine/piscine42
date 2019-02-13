@@ -6,15 +6,15 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 17:19:32 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/12 12:18:09 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/13 10:50:32 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		checkchar(char *str, int i)
 {
-	while ((&str[i] == ' ') || (&str[i] == '\t') || (&str[i] == '\n'))
+	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n'))
 	{
-		if ((&str[i] == '\v') || (&str[i] == '\f') || (&str[i] == '\r'))
+		if ((str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
 			i++;
 	}
 	return (i);
@@ -29,7 +29,7 @@ int		ft_atoi(char *str)
 	i = 0;
 	flagnegatif = 0;
 	number = 0;
-	i = checkchar(&str, i);
+	i = checkchar(str, i);
 	if (str[i] == 45 && (str[i + 1] >= 48 || str[i + 1] <= 57))
 		flagnegatif = 1;
 	if ((str[i] == 45) || (str[i] == 43))
