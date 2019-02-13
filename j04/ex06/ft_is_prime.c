@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 18:16:13 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/13 15:38:24 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/13 21:27:45 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		ft_is_prime(int number)
 	i = 2;
 	if (number <= 1)
 		return (0);
+	if (number == 2)
+		return (1);
 	if (number % 2 == 0 || number % 3 == 0)
 		return (0);
 	while (i < number / 2)

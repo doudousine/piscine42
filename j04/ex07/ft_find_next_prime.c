@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 20:41:37 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/13 15:42:34 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/13 21:27:30 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		ft_is_prime(int number)
 	i = 2;
 	if (number <= 1)
 		return (0);
+	if (number == 2)
+		return (1);
 	if (number % 2 == 0 || number % 3 == 0)
 		return (0);
 	while (i < number / 2)
@@ -32,8 +34,8 @@ int		ft_is_prime(int number)
 
 int		ft_find_next_prime(int number)
 {
-	if (number <= 1)
-		return (0);
+	if (number <= 2)
+		return (2);
 	while (ft_is_prime(number) != 1)
 		number++;
 	return (number);
