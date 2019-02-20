@@ -1,27 +1,21 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/07 09:52:04 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/19 23:23:53 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/19 14:04:02 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/19 14:55:55 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+void	ft_swap(int *a, int *b)
 {
-	char buffer;
+	int recipient;
 
-	buffer = 'a';
-	while (buffer <= 'z')
-	{
-		ft_putchar(buffer);
-		buffer++;
-	}
+	recipient = 0;
+	recipient = *a;
+	*a = *b;
+	*b = recipient;
 }

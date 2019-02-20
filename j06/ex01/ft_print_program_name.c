@@ -1,27 +1,30 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/07 09:52:04 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/19 23:23:53 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/19 19:53:27 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/20 15:19:31 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+int		main(int argc, char **argv)
 {
-	char buffer;
+	char	*current_arg;
+	int		i;
 
-	buffer = 'a';
-	while (buffer <= 'z')
+	i = argc;
+	i = 0;
+	current_arg = argv[0];
+	while (current_arg[i])
 	{
-		ft_putchar(buffer);
-		buffer++;
+		ft_putchar(current_arg[i]);
+		i++;
 	}
+	ft_putchar('\n');
+	return (0);
 }

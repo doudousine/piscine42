@@ -1,27 +1,21 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/07 09:52:04 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/19 23:23:53 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/19 14:56:19 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/19 14:57:05 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int		ft_strlen(char *str)
 {
-	char buffer;
+	int i;
 
-	buffer = 'a';
-	while (buffer <= 'z')
-	{
-		ft_putchar(buffer);
-		buffer++;
-	}
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
