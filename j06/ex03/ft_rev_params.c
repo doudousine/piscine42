@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 20:12:34 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/20 15:30:29 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/20 18:18:16 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		main(int argc, char **argv)
 		while (current_arg[j])
 		{
 			ft_putchar(current_arg[j]);
-			ft_putchar('\n');
 			j++;
 		}
+		ft_putchar('\n');
 		j = 0;
 		i--;
 	}
