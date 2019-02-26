@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:20:05 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 10:06:00 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/26 11:13:41 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void ft_putchar(char c);
+void	ft_putchar(char c);
 
 char	*ft_display_params(char *string, char **argv, int argc)
 {
@@ -40,7 +40,7 @@ char	*ft_display_params(char *string, char **argv, int argc)
 		j = 0;
 		i++;
 	}
-	string[z] = '\0';
+	string[z - 1] = '\0';
 	return (string);
 }
 
@@ -56,17 +56,10 @@ char	*ft_concat_params(int argc, char **argv)
 	{
 		while (argv[i][j])
 			j++;
-		j = 0;
 		i++;
 	}
 	if (!(string = malloc(sizeof(char) * j + 1)))
-		return ((char *)0);
+		return (NULL);
 	string = ft_display_params(string, argv, argc);
 	return (string);
-}
-
-int main(int argc, char **argv)
-{
-	printf("%s", ft_concat_params(argc, argv));
-	return 0;
 }
