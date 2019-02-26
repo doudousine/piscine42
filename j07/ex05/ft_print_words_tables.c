@@ -6,13 +6,12 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 03:44:15 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 11:14:21 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/26 11:19:14 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 char	**ft_split_whitespaces(char *str);
 
