@@ -6,13 +6,13 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:20:05 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 15:37:09 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/26 15:43:11 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
+
 void	ft_putchar(char c);
 
 char	*ft_display_params(char *string, char **argv, int argc)
@@ -62,11 +62,3 @@ char	*ft_concat_params(int argc, char **argv)
 	string = ft_display_params(string, argv, argc);
 	return (string);
 }
-
-int main(int argc, char **argv)
-{
-	printf("%s",ft_concat_params( argc, argv));
-	return 0;
-}
-	
-
