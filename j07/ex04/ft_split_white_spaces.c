@@ -5,89 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/22 07:21:33 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/25 05:45:01 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/25 23:36:16 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/26 10:14:33 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 
-void	ft_putstr(char *str)
+char	*ft_strdup(char *src)
 {
-	int i;
-
-	i = 0;
-	while(str[i])
-	{
-		write(1, &str[i],1);
-		i++;
-	}
-}
-
-void	words_len(char *str, int words_len[50])
-{
-	int i;
-	int j;
-	int word_index;
-
-	i = 0;
-	j = 1;
-	word_index = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ' || str[i] == '\t' ||
-		str[i] == '\n' || str[i + 1] == '\0')
-			if (str[i - 1] > 32 && str[i - 1] < 127)
-			{
-				while (str[i - j] >= 33 && str[i - j] <= 126)
-					j++;
-				if (str[i + 1] == '\0')
-					words_len[word_index] = j;
-				else
-					words_len[word_index] = j - 1;
-				word_index++;
-			}
-		j = 1;
-		i++;
-	}
-}
-
-int		count_words(char *str, int word_len[50])
-{
-	int i;
-	int j;
-	int words;
-
-	i = 0;
-	j = 0;
-	words = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		{
-			if (str[i - 1] >= 33 && str[i - 1] <= 126)
-				words++;
-		}
-		i++;
-	}
-	words_len(str, word_len);
-	return (words + 1);
-}
-
-char *ft_strdup(char *src)
-{
+	int		size;
 	char	*dup;
-	int		len;
 	int		i;
 
-	len = 0;
+	size = 0;
+	while (src[size] != '\0' && src[size] != '  '
+	&& src[size] != '\n' && src[size] != '\t')
+		size++;
+	dup = (char*)malloc(sizeof(*dup) * size + 1);
+	if (dup == 0)
+		return (NULL);
 	i = 0;
-	while (src[len] != ' ' || src[len] != '\n')
-		len++;
-	dup = (char *)malloc(sizeof(char) * len + 1);
-	while (i < len)
+	while (src[i] != '\0' && src[i] != '\n'
+	&& src[i] != '\t' && src[i] != ' ')
 	{
 		dup[i] = src[i];
 		i++;
@@ -96,32 +36,53 @@ char *ft_strdup(char *src)
 	return (dup);
 }
 
-char	**ft_split_whitespaces(char *str)
+int		is_new_word(char *str, int i)
 {
-	int		i;
-	int		words;
-	int		word_len[50];
-	char	**parsed_string;
-
-	i = 0;
-	words = count_words(str, word_len);
-	words_len(str, word_len);
-	parsed_string = (char **)malloc(sizeof(char *) * (words + 1));
-	while (i < words)
-	{
-		*parsed_string = (char *)malloc(sizeof(char) * (word_len[i] + 1));
-		parsed_string[i] = ft_strdup(str);
-			i++;
-	}
-	parsed_string[i][0] = '0';
-	return (parsed_string);
+	if ((str[i] != ' ' && str[i] != '\n' && str[i] != '\t') &&
+	((i == 0) || (i != 0 && (str[i - 1] == ' '
+	|| str[i - 1] == '\t' || str[i - 1] == '\n'))))
+		return (1);
+	else
+		return (0);
 }
 
-int main()
+int		ft_count_words(char *str)
 {
-	char *str = "mathieu sandana est batman";
-	char *str2[];
-	str2 = ft_split_whitespaces(str);
-	printf("%s\n%s\n", str2[0], str2[1]);
-	return (0);
+	int i;
+	int words;
+
+	i = 0;
+	words = 0;
+	while (str[i] != '\0')
+	{
+		if (is_new_word(str, i))
+			words++;
+		i++;
+	}
+	return (words);
+}
+
+char	**ft_split_whitespaces(char *str)
+{
+	char	**parsed_string;
+	int		index;
+	int		i;
+
+	index = 0;
+	i = 0;
+	parsed_string = (char**)malloc(sizeof(char*) * ft_count_words(str) + 1);
+	if (parsed_string == 0)
+		return (NULL);
+	while (str[i] != '\0')
+	{
+		if (is_new_word(str, i))
+		{
+			parsed_string[index] = ft_strdup(str + i);
+			index++;
+		}
+		i++;
+	}
+	parsed_string[index] = (char*)malloc(sizeof(char*));
+	parsed_string[index] = 0;
+	return (parsed_string);
 }

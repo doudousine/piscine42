@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/12 18:16:13 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 03:20:07 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/26 03:44:15 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/26 10:10:57 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
 
-int		ft_is_prime(int number)
+char **ft_split_whitespaces(char *str);
+
+void	ft_putchar(char c)
 {
-	int mod;
+	write(1, &c, 1);
+}
+void	ft_putstr(char *str)
+{
 	int i;
 
-	i = 2;
-	if (number <= 1)
-		return (0);
-	if (number == 2)
-		return (1);
-	if (number % 2 == 0 || number % 3 == 0)
-		return (0);
-	while (i < number / 2)
+	i = 0;
+	while (str[i])
 	{
-		mod = number % i;
-		if (mod == 0)
-			return (0);
+		ft_putchar(str[i]);
 		i++;
 	}
-	return (1);
+}
+
+void	ft_print_words_tables(char **tab)
+{
+	int		i;
+
+	i = 0;
+	while (tab[i])
+	{
+		ft_putstr(tab[i]);
+		ft_putchar('\n');
+		i++;
+	}
 }
