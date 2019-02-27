@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 10:36:20 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/27 21:46:43 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/27 23:51:42 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ typedef struct		s_stock_par
 
 char				**ft_split_whitespaces(char *str);
 void				ft_show_tab(struct s_stock_par *par);
+void				ft_putchar(char c);
 #endif

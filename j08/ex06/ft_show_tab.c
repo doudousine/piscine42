@@ -6,14 +6,12 @@
 /*   By: abaliev <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 11:01:58 by abaliev           #+#    #+#             */
-/*   Updated: 2019/02/27 21:48:15 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/27 23:48:29 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_stock_par.h"
-
-void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
