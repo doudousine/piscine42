@@ -6,58 +6,59 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 11:09:05 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/27 16:10:43 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/27 21:48:24 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
 
-int					ft_strlen(char *str)
+char				ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
+	{
 		i++;
+	}
 	return (i);
 }
 
-char				*ft_strdup(char *str)
+char				*ft_copystr(char *src)
 {
+	int		s;
+	char	*dest;
 	int		i;
-	int		j;
-	char	*dup;
 
 	i = 0;
-	j = 0;
-	while (str[i])
-		j++;
-	i = 0;
-	dup = malloc(sizeof(char) * j + 1);
-	while (i < j)
+	s = 0;
+	while (src[s] != '\0')
+		s++;
+	dest = (char*)malloc(sizeof(char) * (s + 1));
+	while (i < s)
 	{
-		dup[i] = str[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	dest[i] = '\0';
+	return (dest);
 }
 
 struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
-	int					i;
-	int					size;
-	struct s_stock_par	*tab;
+	struct s_stock_par		*par;
+	int						i;
 
 	i = 0;
-	tab = (t_stock_par*)malloc(sizeof(t_stock_par) * ac + 1);
+	par = (t_stock_par*)malloc(sizeof(t_stock_par) * (ac + 1));
 	while (i < ac)
 	{
-		tab->size_param = ft_strlen(av[i]);
-		tab->str = av[i];
-		tab->copy = ft_strdup(av[i]);
-		tab->tab = ft_split_whitespaces(av[i]);
+		par[i].size_param = ft_strlen(av[i]);
+		par[i].str = av[i];
+		par[i].copy = ft_copystr(av[i]);
+		par[i].tab = ft_split_whitespaces(av[i]);
 		i++;
 	}
-	return (tab);
+	par[i].str = 0;
+	return (par);
 }

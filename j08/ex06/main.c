@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: scarpent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/27 10:36:20 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/27 21:46:43 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/19 11:39:54 by scarpent          #+#    #+#             */
+/*   Updated: 2019/02/27 21:27:36 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
-# include <stdlib.h>
-# include <unistd.h>
+#include <unistd.h>
 
-typedef struct		s_stock_par
-{
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}					t_stock_par;
-
-char				**ft_split_whitespaces(char *str);
+struct s_stock_par	*ft_param_to_tab(int ac, char **av);
 void				ft_show_tab(struct s_stock_par *par);
-#endif
+
+void				ft_putchar(char c);
+
+int					main(int argc, char **argv)
+{
+	struct s_stock_par	*stock;
+
+	stock = ft_param_to_tab(argc, argv);
+	ft_show_tab(stock);
+	return (0);
+}
