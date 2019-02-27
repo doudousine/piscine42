@@ -6,7 +6,7 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 14:49:21 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/27 15:25:55 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/27 16:02:05 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_show_tab(struct s_stock_par *par)
 {
 	int i;
 
-	i = -1;
+	i = 0;
 	while (par[i].str)
 	{
 		ft_putnbr(par[i].size_param);
