@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_stock_par.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 16:17:03 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/27 11:17:04 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/27 10:36:20 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/27 13:56:35 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
+# include <stdlib.h>
 
-typedef struct	s_point
+typedef struct		s_stock_par
 {
-	int x;
-	int y;
-}				t_point;
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}					t_stock_par;
+
+char				**ft_split_whitespaces(char *str);
+void				ft_show_tab(char **tab);
 #endif

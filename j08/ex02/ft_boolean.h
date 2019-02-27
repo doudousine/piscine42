@@ -6,15 +6,16 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:15:32 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 16:07:12 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/27 10:18:41 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BOOLEAN_H
 # define FT_BOOLEAN_H
-
-typedef  int t_bool;
 # include <unistd.h>
+
+typedef int	t_bool;
+
 # define TRUE 1
 # define FALSE 0
 # define SUCCESS 1

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.c                                       :+:      :+:    :+:   */
+/*   ft_stock_par.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 13:27:44 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 13:44:17 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/27 10:36:20 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/27 13:56:35 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_boolean.h"
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
+# include <stdlib.h>
 
-void	ft_putstr(char *str)
+typedef struct		s_stock_par
 {
-	while (*str)
-		write(1, str++, 1);
-}
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}					t_stock_par;
 
-t_bool	ft_is_even(int nbr)
-{
-	return ((EVEN(nbr)) ? TRUE : FALSE);
-}
-
-int		main(int argc, char **argv)
-{
-	(void)argv;
-	if (ft_is_even(argc - 1) == TRUE)
-		ft_putstr(EVEN_MSG);
-	else
-		ft_putstr(ODD_MSG);
-		return (SUCCESS);
-}
+char				**ft_split_whitespaces(char *str);
+void				ft_show_tab(char **tab);
+#endif

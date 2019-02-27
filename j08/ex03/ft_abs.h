@@ -6,9 +6,11 @@
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 15:56:00 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/26 16:06:50 by djsy             ###   ########.fr       */
+/*   Updated: 2019/02/27 10:21:04 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef FT_ABS_H
-# define ABS(Value) (Value < 0) ? -Value : Value
+# define FT_ABS_H
+# define ABS(x) (x < 0) ? -x : x
 #endif
