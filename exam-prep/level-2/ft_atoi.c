@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 17:26:46 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/28 19:58:36 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/28 18:22:35 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/28 18:53:15 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_is_sort(int *tab, int length, int (*f)(int, int))
+#include <stdio.h>
+int		ft_atoi(char *str)
 {
-	int	i;
+	int i;
+	int nb = 0;
 
 	i = 0;
-	while (i < length - 1)
+	while(str[i] < 33 || str[i] > 126)
+		i++;
+	if(str[i] == '-' || str[i] == '+')
+		i++;
+	if(str[i] == '-')
+		nb = -nb;
+	while(str[i] >= '0' && str[i] <= '9')
 	{
-		if (f(tab[i], tab[i + 1]) <= 0)
-			i++;
-		else
-			i = length;
+		nb = nb * 10 + (str[i] - 48);
+		i++;
 	}
-	if (i == length - 1)
-		return (1);
-	return (0);
+	return nb;
+}
+
+int main(int ac, char **av)
+{
+	if (ac == 2)
+		printf("%i\n",ft_atoi(av[1]));
+	return 0;
 }
