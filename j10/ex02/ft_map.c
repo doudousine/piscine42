@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/28 17:24:20 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/28 17:38:23 by djsy             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int	*ft_map(int *tab, int length, int (*)(int))
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
-	int	*tab;
-	int	i;
+	int *return_tab;
+	int i;
 
 	i = 0;
-	tab = (int*)malloc(sizeof(*tab) * length);
+	return_tab = (int*)malloc(sizeof(*tab) * length);
 	while (i < length)
 	{
-		tab[i] = f(tab[i]);
+		return_tab[i] = f(tab[i]);
 		i++;
 	}
-	return (tab);
+	return (return_tab);
 }
