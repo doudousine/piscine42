@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 13:08:36 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/10 21:54:08 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/14 21:48:24 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/19 17:25:19 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//Now its gonna be the same thing over and over again
-void	ft_div_mod(int a, int b, int *div, int *mod)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	*div = a / b;
-	*mod = a % b;
+	unsigned int i;
+	unsigned int size;
+
+	i = 0;
+	size = 0;
+	while (src[i] && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

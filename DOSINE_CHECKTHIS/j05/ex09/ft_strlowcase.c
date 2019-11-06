@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 13:08:36 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/10 21:54:08 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/15 19:46:15 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/15 19:46:31 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//Now its gonna be the same thing over and over again
-void	ft_div_mod(int a, int b, int *div, int *mod)
+char	*ft_strlowcase(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] = str[i] + 32;
+		i++;
+	}
+	return (str);
 }

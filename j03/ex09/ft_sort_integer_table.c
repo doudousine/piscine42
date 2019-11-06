@@ -9,7 +9,9 @@
 /*   Updated: 2019/02/12 11:56:27 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//skip this unless you really have nothing else to do
+//otherwsie, python tutor it
+//
 void	ft_swap(int *tab1, int *tab2)
 {
 	int recipient;

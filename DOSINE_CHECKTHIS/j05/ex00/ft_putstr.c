@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 13:08:36 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/10 21:54:08 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/13 16:10:39 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/15 19:59:21 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_putchar(char c);
 
-//Now its gonna be the same thing over and over again
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_putstr(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-
+//IGBORE THIS ONE TOO
 void	ft_putchar(char c);
 
 int		ft_display_print(int a, int b)

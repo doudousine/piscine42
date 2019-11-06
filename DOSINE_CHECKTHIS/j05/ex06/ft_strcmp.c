@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 13:08:36 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/10 21:54:08 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/15 18:17:13 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/19 13:49:20 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//Now its gonna be the same thing over and over again
-void	ft_div_mod(int a, int b, int *div, int *mod)
+int		ft_strcmp(char *s1, char *s2)
 {
-	*div = a / b;
-	*mod = a % b;
+	int i;
+	int result;
+
+	i = 0;
+	while (s1[i] != '\0' && s1[i] == s2[i])
+	{
+		result = s2[i] - s1[i];
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

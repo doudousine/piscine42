@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djsy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 13:08:36 by djsy              #+#    #+#             */
-/*   Updated: 2019/02/10 21:54:08 by djsy             ###   ########.fr       */
+/*   Created: 2019/02/15 19:02:41 by djsy              #+#    #+#             */
+/*   Updated: 2019/02/15 20:17:16 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//Now its gonna be the same thing over and over again
-void	ft_div_mod(int a, int b, int *div, int *mod)
+int		ft_str_is_numeric(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < '0')
+			return (0);
+		if (str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }

@@ -9,7 +9,8 @@
 /*   Updated: 2019/02/10 11:47:34 by djsy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//IGNORE THIS EXERCICE, pqs utile pour les exams ou meme pour comprendre le c
+//just a brain appetizer
 void	ft_putchar(char c);
 
 void	ft_display_comb(int n0, int n1, int n2)
